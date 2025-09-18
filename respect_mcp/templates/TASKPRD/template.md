@@ -1,6 +1,6 @@
- # TASKPRD-PROVISIONAL1: Character Creation Tasks
+ # TASKPRD-PROVISIONAL1: Feature/Capability Tasks
 
-*Parent*: PRD-<id>: Character Creation PRD  
+*Parent*: PRD-<id>: <Parent PRD Title>  
 
 ## Workspace Scope
 Declare the scope of the work with root path and other descriptive language
@@ -13,60 +13,58 @@ Declare the scope of the work with root path and other descriptive language
 
 ### Proposed New Files
 [Example]
-- `path/to/potential/file1.ts` - Brief description of why this file is relevant (e.g., Contains the main component for this feature).
-- `path/to/file1.test.ts` - Unit tests for `file1.ts`.
-- `path/to/another/file.tsx` - Brief description (e.g., API route handler for data submission).
-- `path/to/another/file.test.tsx` - Unit tests for `another/file.tsx`.
+- `path/to/new/component_or_module.ext` - Purpose and role in the implementation.
+- `path/to/new/component_or_module.test.ext` - Unit tests for the new component/module.
+- `path/to/new/api_or_service.ext` - Endpoint/service for core capability.
+- `path/to/new/api_or_service.test.ext` - Tests for the API/service.
 ### Existing Files Modified
-- `lib/utils/helpers.ts` - Brief description (e.g., Utility functions needed for calculations).
-- `lib/utils/helpers.test.ts` - Unit tests for `helpers.ts`.
+- `path/to/existing/module.ext` - Brief reason for modification.
+- `path/to/existing/module.test.ext` - Updated tests for the modified module.
 
 ## Implementation Tasks
 
-### TASK-PROVISIONAL1: Define character schema in frontend
-*Implements*: REQ-1,REQ-2  
-*Description*: Create TypeScript interfaces and validation schemas for character data structure  
+### TASK-PROVISIONAL1: Define data model and validation
+*Implements*: REQ-1, REQ-2  
+*Description*: Define data structures and validation rules for core entities involved in this feature.  
 *Acceptance Criteria*:
-- Character interface includes name, race, class, and stat fields  
-- Validation prevents invalid character configurations  
-- Schema supports all defined races and classes  
+- Data model covers all required fields with clear types and constraints  
+- Validation rules prevent invalid inputs and edge cases  
+- Model is documented and agreed upon with the team  
 *Reference*:
-- `/Users/kevinsullivan/docs/typescript-schema-guidelines.md` TypeScript guidelines
+- `path/to/docs/data-model-guidelines.md` (optional)
 
-### TASK-PROVISIONAL2: Build creation form UI
-*Implements*: REQ-1,REQ-2  
-*Description*: Implement React components for character creation form  
+### TASK-PROVISIONAL2: Build user interface/workflow
+*Implements*: REQ-1, REQ-2  
+*Description*: Implement the user interface (or CLI/workflow) to capture inputs and guide the user through the process.  
 *Acceptance Criteria*: 
-- Form validates character name length and format  
-- Race selection displays stat modifiers  
-- Class selection shows available abilities  
-- Form submission calls character creation API  
+- Input fields enforce validation with clear feedback  
+- UI presents available options and states appropriately  
+- Submission triggers the corresponding service/API  
+- Accessibility and basic responsiveness are considered  
 
-### TASK-PROVISIONAL3: Implement character creation API endpoint
-*Implements*: REQ-1,REQ-2  
-*Description*: Create REST API endpoint for character creation with validation  
+### TASK-PROVISIONAL3: Implement service/API endpoint
+*Implements*: REQ-1, REQ-2  
+*Description*: Implement a service or API endpoint to process requests and apply business rules.  
 *Acceptance Criteria*:
-- Endpoint validates all input parameters  
-- Returns appropriate error messages for invalid data  
-- Persists character data to database  
-- Meets <200ms response time requirement  
+- Validates and sanitizes inputs  
+- Returns meaningful errors for invalid requests  
+- Performs required persistence/side effects reliably  
+- Meets the target response time (e.g., P95 ≤ acceptable threshold)  
 
-### TASK-PROVISIONAL4: Database character table setup
+### TASK-PROVISIONAL4: Set up data storage/schema
 *Implements*: REQ-1  
-*Description*: Create database table and constraints for character storage  
+*Description*: Define and apply storage schema (database, files, or other) with necessary constraints and indexes.  
 *Acceptance Criteria*:
-- Table includes all required character fields  
-- Unique constraint on character name per server  
-- Foreign key relationships to race/class lookup tables  
-- Indexes for performance optimization  
+- Schema includes required fields and relationships  
+- Appropriate constraints and indexes are in place  
+- Migration/DDL scripts are idempotent and documented  
 *Reference*:
-- `/Users/kevinsullivan/docs/postgres-schema-documentation.md` database guidelines
+- `path/to/docs/storage-schema-guidelines.md` (optional)
 
-### TASK-PROVISIONAL5: Race and class configuration data
+### TASK-PROVISIONAL5: Prepare configuration/seed data
 *Implements*: REQ-2  
-*Description*: Create JSON configuration files for races and classes  
+*Description*: Provide configuration/seed data required for the feature, with validation and clear structure.  
 *Acceptance Criteria*:
-- Race definitions include stat modifiers and descriptions  
-- Class definitions include starting abilities and equipment  
-- Configuration is easily modifiable for game balance  
-- Data validation prevents invalid configurations  
+- Config/seed definitions include all required fields and defaults  
+- Data is easy to modify and validate  
+- Loading process is deterministic and documented  

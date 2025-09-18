@@ -1,9 +1,9 @@
 # Sample Codex Configuration for ReSpecT MCP Server
 # As of 20250917, project-level configuration is not supported: https://github.com/openai/codex/issues/2554
-# ReSpecT MCP must be configured globally for the current project documet store
+# ReSpecT MCP must be configured globally (~/.codex/config.toml) for the current project documet store
 
 [mcp_servers.respect_manager]
-command = "/path/to/ReSpecT-MCP/respect_mcp_server/setup-respect-mcp.sh"
+command = "/path/to/respect-mcp/respect_mcp_server/setup-respect-mcp.sh"
 args = [
     "/path/to/your/project/document/repository",
     "/path/to/your/provisional/document/store",

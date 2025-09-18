@@ -1,36 +1,36 @@
-# PRD-PROVISIONAL1: Character Creation 
+# PRD-PROVISIONAL1: Feature/Capability Title 
 
 ## Overview
-Requirements for selecting character name, race, and class during the character creation process.
+Brief summary of the feature or capability, its purpose, target users, and the value it delivers.
 
 ## Technical Considerations
-List technical choices here like langauge, frameworks etc...
+List anticipated technical decisions (language, frameworks, services, data stores), key constraints (performance, security, compliance), and notable risks.
 
 ## Workspace Scope
-Declare the scope of the work with root path and other descriptive language
+Define repository root(s), in/out-of-scope areas, and any constraints or assumptions that bound the work.
 
 ## Reference Files
-List all relavant background and guidance documentation here with paths and descriptions
+List relevant background, design docs, issues/specs, and external references with paths and short descriptions.
 
 ## Architecture
 
-### ADR-PROVISIONAL2: Character Data Storage Architecture
+### ADR-PROVISIONAL2: Core Architecture Decision
 
 **Context and Problem Statement**
-We need to decide how to store and manage character data (name, race, class, stats) for the character creation system. The solution must be scalable, performant, and maintainable.
+Describe the core architectural problem and context for this feature/capability. The solution should meet scalability, performance, reliability, and maintainability goals appropriate to the system.
 
 **Decision Drivers**
-- Performance requirements for character loading
+- Performance objectives
 - Data consistency and integrity
-- Scalability for multiple concurrent users
-- Development team expertise
-- Infrastructure constraints
+- Scalability expectations
+- Maintainability and operability
+- Team expertise and infrastructure constraints
 
 **Considered Options**
-1. **Relational Database (PostgreSQL)** - Traditional RDBMS approach
-2. **Document Database (MongoDB)** - NoSQL document store
-3. **In-Memory Cache (Redis)** - Fast access with persistence
-4. **Local File Storage** - Simple JSON/XML files
+1. **Relational Database (e.g., PostgreSQL/MySQL)** — Structured schema with ACID transactions
+2. **Document Store (e.g., MongoDB/Cosmos DB)** — Flexible schema and horizontal scale
+3. **In-Memory Cache (e.g., Redis/Memcached)** — Low-latency access with optional persistence
+4. **Local/File/Object Storage** — Simple files or object store (e.g., S3, local JSON)
 
 **Decision Outcome**
 Chosen option: **[OPTION NAME]**
@@ -51,17 +51,17 @@ Chosen option: **[OPTION NAME]**
 
 ## Requirements
 
-### REQ-PROVISIONAL3: Character name input
+### REQ-PROVISIONAL3: Requirement A
 *Pattern*: Event-driven  
-*Statement*: WHEN a player starts a new game, THEN the system SHALL allow entering a character name.  
-*Rationale*: Players need unique identity for their character.  
-*Fit*: Name must be 3-20 characters, alphanumeric only.  
+*Statement*: WHEN <trigger/event>, THEN the system SHALL <observable outcome/behavior>.  
+*Rationale*: Why this behavior is needed and the value it provides.  
+*Fit*: Quantified acceptance criteria (e.g., limits, ranges, formats, timing).  
 *Priority*: Must  
 
-### REQ-PROVISIONAL4: Race selection
+### REQ-PROVISIONAL4: Requirement B
 *Pattern*: State-driven  
-*Statement*: WHILE in character creation mode, THEN the system SHALL provide selectable race options with stat modifiers.  
-*Rationale*: Race affects gameplay mechanics and character progression.  
-*Fit*: Minimum 4 race options (Human, Elf, Dwarf, Orc).  
+*Statement*: WHILE <system state/condition>, THEN the system SHALL <capability/constraint>.  
+*Rationale*: Why this is important in this state and how it supports user or system goals.  
+*Fit*: Clear measurable criteria to validate compliance (counts, formats, thresholds).  
 *Priority*: Must   
 
