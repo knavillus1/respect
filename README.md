@@ -125,6 +125,18 @@ Available modes (instruction files live in `respect_mcp/instructions/`):
 
 There is also a “ReSpecT Master” instruction set that helps an agent route to the correct mode, including a `FULL AUTO` path that chains modes automatically.
 
+## License and Attribution
+
+This project is licensed under the Apache License 2.0. To preserve attribution in derivatives, please:
+
+- Include the top-level `LICENSE` and `NOTICE` files in any source or binary redistribution.
+- Keep attribution notices intact and add a note to modified files indicating changes (Apache-2.0 §4(b)).
+- If you distribute a UI or documentation, surface attributions where third‑party notices normally appear (Apache-2.0 §4(d)).
+
+SPDX header for source files:
+
+// SPDX-License-Identifier: Apache-2.0
+
 ## Support and Contributions
 This project was developed rapidly as a proof-of-prinicple and the python implementation leaned on LLM generation heavily.  It's messy.  If this concept proves worthwile, I'd consider a rewrite.
 ## Reference
