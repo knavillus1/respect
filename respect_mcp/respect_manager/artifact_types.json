@@ -1,0 +1,82 @@
+{
+  "artifact_types": {
+    "PRD": {
+      "name": "Product Requirements Document",
+      "description": "High-level product requirements and specifications",
+      "template_name": "PRD-{docId}",
+      "header_format": "# PRD-{id}: {description}",
+      "can_tool_update": false,
+      "is_file": true,
+      "addable_nested_artifact_types": ["SACC", "UACC"],
+      "status_update_file_move": ["COMPLETED", "ARCHIVED","TESTING"],
+      "reference_types": ["TASKPRD"],
+      "valid_statuses": ["NEW", "ACTIVE", "TESTING", "COMPLETED", "ARCHIVED","CANCELLED"]
+    },
+    "TASKPRD": {
+      "name": "Task Product Requirements Document", 
+      "description": "Task-specific product requirements derived from PRD",
+      "template_name": "TASKPRD-{docId}",
+      "header_format": "# TASKPRD-{id}: {description}",
+      "can_tool_update": false,
+      "is_file": true,
+      "status_update_file_move": ["COMPLETED", "ARCHIVED"],
+      "valid_statuses": ["NEW", "ACTIVE", "COMPLETED", "ARCHIVED","CANCELLED"]
+    },
+    "REQ": {
+      "name": "Requirements",
+      "description": "General requirements specification",
+      "template_name": "REQ-{docId}",
+      "header_format": "### REQ-{id}: {description}",
+      "can_tool_update": true,
+      "is_file": false,
+      "valid_statuses": ["NEW", "TESTING", "COMPLETED", "ARCHIVED","CANCELLED"]
+    },
+    "TASK": {
+      "name": "Task Specification",
+      "description": "Individual task specifications",
+      "template_name": "TASK-{docId}",
+      "header_format": "### TASK-{id}: {description}",
+      "can_tool_update": true,
+      "is_file": false,
+      "has_steps": true,
+      "valid_statuses": ["NEW", "ACTIVE", "COMPLETED","CANCELLED"]
+    },
+    "UACC": {
+      "name": "User Acceptance Test Case",
+      "description": "Acceptance test case to be carried out by users",
+      "template_name": "UACC-{docId}",
+      "header_format": "### UACC-{id}: {description}",
+      "can_tool_update": true,
+      "is_file": false,
+      "has_steps": true,
+      "valid_statuses": ["NEW", "PASSED", "FAILED","CANCELLED"]
+    },
+    "SACC": {
+      "name": "System Acceptance Test Case",
+      "description": "Acceptance test case to be carried out by the system",
+      "template_name": "SACC-{docId}",
+      "header_format": "### SACC-{id}: {description}",
+      "can_tool_update": true,
+      "is_file": false,
+      "has_steps": true,
+      "valid_statuses": ["NEW", "PASSED", "FAILED","CANCELLED"]
+    },
+    "ADR": {
+      "name": "Architectural Review Decision",
+      "description": "Architectural decision record documenting design choices and rationale",
+      "template_name": "ADR-{docId}",
+      "header_format": "### ADR-{id}: {description}",
+      "can_tool_update": true,
+      "valid_statuses": ["NEW", "ACTIVE", "REPLACED", "ARCHIVED"]
+    },
+    "ASD": {
+      "name": "Architectural Summary Document", 
+      "description": "High-level architectural overview and design summary",
+      "template_name": "ASD-{docId}",
+      "header_format": "# ASD-{id}: {description}",
+      "can_tool_update": true,
+      "status_update_file_move": ["REPLACED", "ARCHIVED"],
+      "valid_statuses": ["NEW", "DRAFT", "REVIEW", "APPROVED", "ACTIVE", "REPLACED", "ARCHIVED"]
+    }
+  }
+}

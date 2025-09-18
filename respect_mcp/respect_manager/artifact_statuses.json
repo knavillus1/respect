@@ -1,0 +1,52 @@
+{
+  "statuses": {
+    "NEW": {
+      "name": "New",
+      "description": "New artifact entered without explicit status assigned"
+    },
+    "REVIEW": {
+      "name": "Under Review",
+      "description": "Ready for review and feedback"
+    },
+    "APPROVED": {
+      "name": "Approved", 
+      "description": "Reviewed and approved for implementation"
+    },
+    "ACTIVE": {
+      "name": "Active",
+      "description": "Currently active and in use"
+    },
+    "TESTING": {
+      "name": "Testing",
+      "description": "Under testing or validation"
+    },
+    "COMPLETED": {
+      "name": "Completed",
+      "description": "Work completed successfully"
+    },
+    "CANCELLED": {
+      "name": "Cancelled",
+      "description": "Cancelled or abandoned"
+    },
+    "ARCHIVED": {
+      "name": "Archived",
+      "description": "Archived for historical reference"
+    },
+    "BLOCKED": {
+      "name": "Blocked",
+      "description": "Blocked by dependencies or issues"
+    },
+    "REPLACED": {
+      "name": "Replaced",
+      "description": "Replaced by another artifact"
+    },
+    "FAILED": {
+      "name": "Failed",
+      "description": "Failed to meet requirements or pass testing"
+    },
+    "PASSED": {
+      "name": "Passed",
+      "description": "Successfully met all requirements and passed testing"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "managed_header_items": {
+    "STATUS": {
+      "label": "Status:",
+      "type": "atomic",
+  "artifact_types": ["PRD", "TASKPRD", "REQ", "TASK", "UACC", "SACC", "ADR"]
+    },
+    "IMPLEMENTING_TASKS": {
+      "label": "Implementing Tasks:",
+      "type": "list",
+      "artifact_types": ["REQ"]
+    },
+    "COVERING_TESTS": {
+      "label": "Covering Tests:",
+      "type": "list",
+      "artifact_types": ["REQ"]
+    },
+    "REFERENCED_BY": {
+      "label": "Referenced by:",
+      "type": "list",
+  "artifact_types": ["PRD", "TASKPRD", "REQ", "TASK", "UACC", "SACC", "ADR"]
+    }
+  }
+}

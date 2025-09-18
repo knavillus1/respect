@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.dist/
+.build/
+.eggs/
+.tox/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+pip-wheel-metadata/
+.python-version
+
+# Virtual envs
+.venv/
+venv/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# VSCode
+.vscode/
+
+# JetBrains
+.idea/
+.fleet/
+
+# Editor history
+.history/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Coverage / test
+.coverage*
+coverage.xml
+htmlcov/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build artifacts
+build/
+dist/
+
+# Node / Frontend
+node_modules/
+.vite/
+.parcel-cache/
+*.tsbuildinfo
+*.cache/
+*.local

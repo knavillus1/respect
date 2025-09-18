@@ -1,0 +1,21 @@
+# Sample Codex Configuration for ReSpecT MCP Server
+# As of 20250917, project-level configuration is not supported: https://github.com/openai/codex/issues/2554
+# ReSpecT MCP must be configured globally for the current project documet store
+
+[mcp_servers.respect_manager]
+command = "/path/to/ReSpecT-MCP/respect_mcp_server/setup-respect-mcp.sh"
+args = [
+    "/path/to/your/project/document/repository",
+    "/path/to/your/provisional/document/store",
+    "false"  # Set to "true" to enable debug mode
+]
+
+# The script will:
+# 1. Set up the Python virtual environment if it doesn't exist
+# 2. Install all dependencies using uv
+# 3. Set the required environment variables:
+#    - RESPECT_DOC_REPO_ROOT (from first argument)
+#    - RESPECT_PROVISIONAL_DOC_STORE (from second argument)  
+#    - DEBUG_MODE (from third argument, defaults to "false")
+# 4. Start the MCP server
+

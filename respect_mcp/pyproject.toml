@@ -1,0 +1,30 @@
+[project]
+name = "respect_mcp"
+version = "0.1.0"
+description = "ReSpecT Manager MCP Server - Software Development Lifecycle Document Management"
+authors = [ { name = "Your Name" } ]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  # Core MCP (protocol utilities)
+  "mcp>=0.1.0",
+  # FastMCP (higher-level server helpers)
+  "fastmcp>=2.11.0",
+  "python-dotenv>=1.0.0",
+  "requests>=2.32.0",
+  "watchfiles>=0.21.0",
+  # Sandbox analysis/visualization
+  "matplotlib>=3.9.0",
+  "debugpy",
+]
+
+[project.optional-dependencies]
+# Added debugpy here for development/debug harness
+dev = ["ruff", "mypy", "debugpy"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["respect_mcp"]
