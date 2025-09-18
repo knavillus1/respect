@@ -73,13 +73,17 @@ Parameters:
 
 ### Add task steps
 - Update the TASK with a steps section after the status line.  Task steps should focus on development of code assets, not execution and verification.  A separate acceptance test phase will challenge runtime behaivor and address bugs and issues.
-- Leave two spaces at the end of each line so markdown renders without issue  Strictly adhere to the format below becuase the step update depends on the convention of the format you add here:
+- Begin tasks with `[ ]` and version them according to the parent task Id as demonstrated bewlow.
+- Leave two spaces at the end of each line so markdown renders without issue  Strictly adhere to the format below becuase the step update depends on the convention of the format you add here.
+- Keep all other TASK content identical and include in the update tool call
 ``` markdown 
 ### TASK-12: 
-`Status`: NEW  
+`Status`: ...  
 [ ] 12.1 Step one description    
 [ ] 12.2 Step two description   
-*Implements*: REQ-3, REQ-7  
+*Implements*: ...
+*Description* ...
+*Etc...* ...
 ```
 - Use the tool `update_artifact_text` to update the entire body of the artifact:
 ```
@@ -114,7 +118,7 @@ Parameters:
   artifact_id: "<ACTIVE_TASK_ID>"
   status: "COMPLETED"
 ``` 
-- If the mode is `CONTINUOUS` mode or if the `FULL AUTO` latch is enabled, repeat steps until all TASKPRD tasks are complete.
+- If the mode is `CONTINUOUS` mode or if the `FULL AUTO` latch is enabled, repeat steps until all TASKPRD tasks are complete, keep iterating and do not return to user.
 
 ### TASKPRD completeion
 - When all TASKPRD tasks are marked complete use the `update_artifact_status` tool to update the status of this TASKPRD artitfact to completed:
