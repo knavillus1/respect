@@ -14,13 +14,14 @@ This README summarizes what the server provides, how to run it, the tools it exp
 
 ## Why ReSpecT
 
-Modern AI coding agents are great at writing code, but less consistent at managing artifacts and state across a project. ReSpecT provides a reliable document- and artifact-centric backbone that the agent can use to:
+Modern AI coding agents are great at writing code, but less consistent at managing artifacts and state across a project. ReSpecT MCP is a proof-of-prinicple project that provides MCP tooling to support:
 
-- Generate consistent documents from templates
+- Markdown document-based artifact store - source controlled document source of truth.
+- PRD creation, Task generation, Acceptance test generation, architectural review.
+- Manage process and state throughout phases.
 - Track artifact IDs and statuses across related files
-- Create and finalize provisional artifacts safely
-- Link related artifacts (parent/child, references)
-- Mark task steps completed and advance status
+- Link related artifacts (parent/child, references), real-time updating of related requirements, implementation tasks, and acceptance testings.
+- Task Management and real-time task step status updates
 - Drive well-defined phases from ideation through testing and completion
 
 
@@ -38,6 +39,7 @@ Prerequisites
 - Python 3.11+
 - uv (used by the setup script to create the venv and install deps): https://docs.astral.sh/uv/getting-started/installation/
 
+### Target project workspace
 Agent invocation (/respect)
 - Copy agent instructions in `AGENTS.md` to your base agent instructions file.
 
@@ -47,28 +49,7 @@ Prepare project folders (target project)
 	2) A transient/provisional folder for drafts (RESPECT_PROVISIONAL_DOC_STORE)
 - Keep the provisional folder out of version control (e.g., add to .gitignore). The document repository should be tracked in your VCS.
 
-Run via setup script
-- Script location: `respect_mcp/setup-respect-mcp.sh`
-- The script will:
-	- Validate your doc and provisional directories
-	- Create a virtual environment (`.venv`) using uv if needed
-	- Install dependencies (`uv sync`)
-	- Export env vars and start the MCP server over stdio
-
-Make the script executable and launch the server:
-
-```bash
-chmod +x respect_mcp/setup-respect-mcp.sh
-./respect_mcp/setup-respect-mcp.sh \
-	/absolute/path/to/your/project/respect_docs \
-	/absolute/path/to/your/project/respect_provisional \
-	false
-```
-
-Arguments
-- 1: RESPECT_DOC_REPO_ROOT (source-controlled document repository)
-- 2: RESPECT_PROVISIONAL_DOC_STORE (transient/provisional drafts)
-- 3: DEBUG_MODE (optional; default "false")
+### Codex CLI/IDE (No MCP support for cloud)
 
 Codex CLI integration
 - Use `codex-config-example.toml` in the repo root as a starting point and copy it to your global Codex config (e.g., `~/.codex/config.toml`). As of 2025‑09‑17, project-level config may not be supported.
@@ -83,8 +64,6 @@ args = [
 	"false" # set to "true" for debug
 ]
 ```
-
-Once configured, start Codex and connect to the `respect_manager` MCP server. The server app id is `respect_mcp_server`.
 
 ## Typical Flows (at a glance)
 
