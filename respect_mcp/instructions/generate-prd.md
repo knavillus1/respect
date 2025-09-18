@@ -53,7 +53,7 @@ Parameters:
   artifact_type: "PRD",
   status: "COMPLETED"
 ```
-- If there are completed PRD artifacts in the document store, retrieve them for analysis with the `get_artifact` tool to obtain the full text for each:
+- If a ASD document was obtained, do not bother with PRD retrieval for IDs that are lower than the ASD Id.  Only Retrieve more recent PRDs for analysis with the `get_artifact` tool to obtain the full text for each:
 
 ```
 Tool: get_artifact
