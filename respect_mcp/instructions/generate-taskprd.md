@@ -80,7 +80,7 @@ Parameters:
 Reason about the need to gain specific insight into the current project state and then act within reason to obtain detail needed to generate the tasks for the TASKPRD artifact.
 
 ### Generate Parent Tasks:
-- Based on the PRD analysis, create the file and generate 6 high-level tasks of reasonable development effort that implement all or part of the feature. These tasks should focus on development of code and script assets, not execution and testing.  A separate testing phase will challenge the implementation by verifying runtime behavior.
+- Based on the PRD analysis, create the file and generate tasks of reasonable development effort that implement all feature requirements. These tasks should focus on development of code and script assets, not execution and testing.  A separate testing phase will challenge the implementation by verifying runtime behavior.
 - If the parent task is informed by a referenced file in the PRD (like a html design mockup), add them to the `*Reference*:` section.
 - Consider REQ requirements documented in the PRD that are implemented by each task and reference them in `*Implements*:` section
 - Use tools to generate a draft of the TASKPRD in the `PROVISIONAL_STORE` named `TASKPRD-PROVISIONAL1.md`, leaving the *Reference Files* section empty.
